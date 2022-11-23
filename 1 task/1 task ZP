@@ -1,1 +1,25 @@
-
+while True:
+    rate=int(input('Введите часовую тарифную ставку: '))
+    days=int(input('Введите количество рабочих дней: '))
+    if days < 32:
+        break
+    print("Введите правильное количество дней!")
+mrot = 11121 
+oklad=8*rate*days
+print("Оклад: ", oklad, "руб")
+premiya=oklad
+print("Премия: ",premiya, "руб")
+zp=oklad+premiya
+print("Заработная плата: ", zp, "руб")
+zp_s_uk=zp*1.15
+print("Заработная плата с урал.коэфф.: ", round(zp_s_uk, 2), "руб")
+ndfl=zp_s_uk*0.15
+print("НДФЛ: ", round(ndfl, 2), "руб")
+zp_s_ndfl=zp_s_uk - ndfl
+print("Итоговая заработная плата: ", round(zp_s_ndfl, 2), "руб")
+if zp_s_ndfl > mrot:
+    print("Заработная плата больше прожиточного минимума")
+elif zp_s_ndfl < mrot:
+    print("Заработная плата меньше прожиточного минимума")
+else: 
+    print("Заработная плата равна прожиточному минимуму")
